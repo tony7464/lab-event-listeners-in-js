@@ -31,6 +31,16 @@ function displayUserInput() {
   document.getElementById('textInputDisplay').textContent = `You typed: ${value}`;
 }
 
+// Handle Mouse Events
+function handleMouseEvents() {
+  const someElement = document.getElementById('textInput');
+  someElement.addEventListener('mouseover', () => {
+    someElement.style.backgroundColor = 'yellow';
+  });
+  someElement.addEventListener('mouseout', () => {
+    someElement.style.backgroundColor = 'initial';
+  });
+}
 // Attach Event Listeners
 function setupEventListeners() {
 // Attach event listener to change background color when the button is clicked
@@ -48,6 +58,9 @@ function setupEventListeners() {
 
   // Attach event listener to display user input in real-time as they type
   document.getElementById('textInput').addEventListener('input', displayUserInput)
+
+  // Bonus: attach mouseover/mouseout on the text input
+  handleMouseEvents()
 }
 
 // Initialize event listeners when the DOM is loaded
