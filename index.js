@@ -2,11 +2,16 @@
 
 // Function to change the background color when a button is clicked
 function changeBackgroundColor() {
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+  document.body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
   // Implement the function to change background color
 }
 
 // Function to reset the background color when the body is double-clicked
 function resetBackgroundColor() {
+  document.body.style.backgroundColor = '';
   // Implement the function to reset background color
 }
 
@@ -14,6 +19,7 @@ function resetBackgroundColor() {
 
 // Function to display the key pressed by the user
 function displayKeyPress(event) {
+  document.getElementById('keyPressDisplay').textContent = `Key pressed: ${event.key}`;
   // Implement the function to display key pressed
 }
 
@@ -21,7 +27,8 @@ function displayKeyPress(event) {
 
 // Function to display user input in real-time
 function displayUserInput() {
-  // Implement the function to display user input
+  const value = document.getElementById('textInput').value;
+  document.getElementById('textInputDisplay').textContent = `You typed: ${value}`;
 }
 
 // Attach Event Listeners
